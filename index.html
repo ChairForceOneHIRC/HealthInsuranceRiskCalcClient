@@ -1,13 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>MERNa Web</title>
-	<style>
-	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Rolling Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            color: #202020;
+        }
+
+        ul {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            text-align: center;
+        }
+
+        #winner {
+            font-weight: bold;
+            color: #333;
+        }
     </style>
 </head>
-<body>
-	
+<body onload="rollDice()">
+    <div class="container">
+        <h1>Dice Rolling Game</h1>
+        <p>Welcome to the Dice Rolling Game!</p>
+        <p>Rules of the Game:</p>
+        <ul>
+            <li>There are 2 dice.</li>
+            <li>2 players take turns rolling a pair of dice.</li>
+            <li>Whoever rolls the higher number wins.</li>
+            <li>In case of a draw, there is a re-roll.</li>
+        </ul>
+        <p>Click the button below to roll the dice:</p>
+        <button id="rollButton" onclick="rollDice()" autofocus>Roll Dice</button>
+        <div id="results">
+            <p id="player1Result">Player 1: <span id="player1Score"></span></p>
+            <p id="player2Result">Player 2: <span id="player2Score"></span></p>
+            <p id="winner"></p>
+        </div>
+    </div>
+
+    <script>
+        function rollDice() {
+            var player1 = Math.floor(Math.random() * 6) + 1;
+            var player2 = Math.floor(Math.random() * 6) + 1;
+
+            document.getElementById('player1Score').textContent = player1;
+            document.getElementById('player2Score').textContent = player2;
+
+            if (player1 > player2) {
+                document.getElementById('winner').textContent = "Player 1 wins!";
+            } else if (player2 > player1) {
+                document.getElementById('winner').textContent = "Player 2 wins!";
+            } else {
+                document.getElementById('winner').textContent = "It's a draw! Rolling again...";
+                setTimeout(function () {
+                    rollDice();
+                }, 1000);
+            }
+
+            document.getElementById('rollButton').focus();
+        }
+    </script>
 </body>
 </html>
