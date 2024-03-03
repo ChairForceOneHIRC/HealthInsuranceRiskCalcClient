@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Risk Calculator</title>
+    <script src="index.js"></script>
     <style>
         /* Body Styles */
         body {
@@ -35,6 +36,11 @@
 
         /* Label Styles */
         label {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        p1 {
             font-weight: bold;
             margin-bottom: 8px;
         }
@@ -87,8 +93,13 @@
             <input type="number" id="weight" required><br>
 
             <!-- Height -->
-            <label for="height">Height (in):</label>
-            <input type="number" id="height" required><br>
+            <p1>Height:</p1><br>
+            <label for="feet"> (ft):</label>
+            <input type="number" id="feet" required><br>
+
+            <label for="inches"> (in):</label>
+            <input type="number" id="inches" required><br>
+
 
             <!-- Blood Pressure -->
             <label for="systolic_bp">Systolic Blood Pressure:</label>
@@ -113,5 +124,7 @@
 
         <div id="result"></div>
     </div>
+
+    
 </body>
 </html>
