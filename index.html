@@ -119,11 +119,19 @@
             <label for="alzheimers">Alzheimer's</label><br>
 
             <!-- Calculate Button -->
-            <button type="button" id="calculateBtn">Calculate Risk</button>
+            <button type="button" id="calculateBtn" onclick="calcBMI()">Calculate Risk</button>
         </form>
 
-        <div id="result"></div>
+        <div id="result">
+        <p>BMI Result: </p>
+
+        </div>
     </div>
+
+    <script> 
+    document.getElementById('calculateBtn').addEventListener('click', calcBMI() )
+    document.getElementById('calculateBtn').addEventListener('click', calcRisk() )
+    </script>
 
     
 </body>
