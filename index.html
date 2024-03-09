@@ -77,7 +77,6 @@
             background-color: #0056b3;
         }
 
-
     </style>
 </head>
 <body>
@@ -119,23 +118,22 @@
             <label for="alzheimers">Alzheimer's</label><br>
 
             <!-- Calculate Button -->
-            <button type="button" id="calculateBtn" onclick="calcBMI(); calcRisk()">Calculate Risk</button>
+            <button type="button" id="calculateBtn" onclick="calcRisk();">Calculate Risk</button>
         </form>
 
-        <div id="result">
-        <p>BMI Result: </p>
 
-        <dic id="totalRiskResult"
-        <p>Total Risk: </p>
+        <div id = 'results'>
+
+            <div id="summary"></div>
+            <div id="BMI"></div><br>
+
+            <div id="totalRiskResult"></div>
 
         </div>
+
+ 
+
     </div>
-
-    <script> 
-    document.getElementById('calculateBtn').addEventListener('click', calcBMI() )
-    document.getElementById('calculateBtn').addEventListener('click', calcRisk() )
-    </script>
-
     
 </body>
 </html>
