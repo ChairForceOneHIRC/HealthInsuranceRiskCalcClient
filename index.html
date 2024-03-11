@@ -79,7 +79,9 @@
 
     </style>
 </head>
-<body>
+
+    <!-- calls ping function for the sever to wake it up upon loading the client  -->
+<body onload="ping()">
     <div class="container">
         <h1>Health Risk Calculator</h1>
         <form id="healthForm">
@@ -121,7 +123,7 @@
             <button type="button" id="calculateBtn" onclick="calcRisk();">Calculate Risk</button>
         </form>
 
-
+        <!-- Displays the result for user inputs  -->
         <div id = 'results'>
 
             <div id="summary"></div>
@@ -131,9 +133,9 @@
 
         </div>
 
- 
-
     </div>
     
 </body>
 </html>
+
+

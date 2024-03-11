@@ -107,3 +107,14 @@ function displayErrors(errors) {
         alert(error); // You can replace this with any other method to display errors on the page
     });
 }
+
+function ping() {
+
+        // Call the ping route when the page loads
+        fetch('https://health-insurance-risk-calc-server1.azurewebsites.net/ping')
+            .then(response => response.text())
+            .then(data => console.log(data)) // You can handle the response here
+            .catch(error => console.error('Error:', error));
+
+
+}
