@@ -28,7 +28,7 @@ async function calcRisk() {
 
     // Send request to calculate risk
     const queryParams = new URLSearchParams(userData).toString();
-    const response = await fetch(`http://localhost:3000/calculateRisk?${queryParams}`);
+    const response = await fetch(`https://health-insurance-risk-calc-server1.azurewebsites.net/calculateRisk?${queryParams}`);
     const result = await response.json();
     // Update HTML to display results
     document.getElementById('BMI').innerHTML = "BMI : " + result.BMI;
