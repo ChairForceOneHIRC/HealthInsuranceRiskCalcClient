@@ -15,7 +15,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
         }
 
         /* Container Styles */
@@ -77,13 +76,69 @@
             background-color: #0056b3;
         }
 
+         /* Instruction Styles */
+        .instructions {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .instructions p {
+            margin-bottom: 10px;
+        }
+                
+        /* Result Styles */
+        #results {
+            margin-top: 30px;
+            border-top: 2px solid #ccc;
+            padding-top: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        #results div {
+            margin-bottom: 10px;
+        }
+
+        #summary {
+            font-size: 18px;
+            color: #007bff;
+        }
+
+        #BMI {
+            font-size: 18px;
+            color: #000000;
+        }   
+        #totalRiskResult {
+            font-size: 18px;
+            color: #dc3545;
+
+        }
+
     </style>
 </head>
 
     <!-- calls ping function for the sever to wake it up upon loading the client  -->
 <body onload="ping()">
     <div class="container">
+        
         <h1>Health Risk Calculator</h1>
+
+        <!-- Instructions Section -->
+        <div class="instructions">
+            <p>Welcome to the Health Risk Calculator!</p>
+            <p>Please fill out the form below with the client's information.</p>
+            <p>Check any family diseases that apply to the client.</p>
+            <p>Click the "Calculate Risk" button to see the results.</p>
+        </div>
+
+        
         <form id="healthForm">
             <!-- Age -->
             <label for="age">Age:</label>
